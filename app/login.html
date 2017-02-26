@@ -8,28 +8,25 @@
 </head>
 <body>
 	<div class="login-wrap">
-		<div class="login-menu">
-			<div class="login-form">
-				<div class="login-row">
-					<span class="icon icon-account_circle-grey"></span>
-					<input type="text" class="form-control" placeholder="E-mail">
-				</div>
-				<div class="login-row">
-					<span class="icon icon-lock-grey"></span>
-					<input type="text" class="form-control" placeholder="Пароль">
-				</div>
-				<div class="login-row login-btn">
-					<input type="submit" value="ВОЙТИ" class="form-btn">
-				</div>
-				<div class="login-row">
-					<input type="checkbox" name="save-passw" id="save-passw">
-					<label for="save-passw">
-						<span class="check-text">Сохранить пароль</span>
-					</label>
-				</div>
-				
+		<form>
+			<div class="login-row">
+				<span class="icon icon-account_circle-grey"></span>
+				<input type="text" class="form-control" placeholder="E-mail">
 			</div>
-		</div>
+			<div class="login-row">
+				<span class="icon icon-lock-grey"></span>
+				<input type="text" class="form-control" placeholder="Пароль">
+			</div>
+			<div class="login-row login-btn">
+				<input type="submit" value="ВОЙТИ" class="form-btn">
+			</div>
+			<div class="login-row save-passw">
+				<input type="checkbox" name="save-passw" id="save-passw">
+				<label for="save-passw">
+					<span class="check-text">Сохранить пароль</span>
+				</label>
+			</div>	
+		</form>
 	</div>
 </body>
 </html>

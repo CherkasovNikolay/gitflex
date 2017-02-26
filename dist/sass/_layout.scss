@@ -96,145 +96,145 @@ main{
 		left: 1.8em;
 		bottom: 0;
 	}
-}	
-.task{
-	width: 100%;
-	padding-left: 5.4em;
-	position: relative;
-	max-width: calc( 600px + 5.4em );
-	@media (min-width: 1024px){
-		display: flex;
-	}
-	&.open{
-		.task-content-wrap{
-			display: block;
-		}
-		.task-header{
-			border-radius: 1em 1em 0 0;
-			@media (min-width: 1024px){
-				min-width: 600px;
-			}
-		}
-		
-	}
-	&.success{
-		.task-header{
-			background: $successBg;
-			@media (min-width: 1024px){
-				min-width: 600px;
-			}
-		}
-		.task-completion-row{
-			display: flex;
-    		justify-content: flex-start;
-    		align-items: center;
-			color: $successBg;
-			margin-top: 2em;
-			@media (min-width: 1024px){
-				margin-top: 0;
-				margin-left: 7em;
-			}
-			.icon{
-				font-size: 2.5em;
-				margin-right: 0.8em;
-			}
-			.completion-text{
-				font-size: 1.6em;
-			}
-		}
-	}
-	&.warning{
+}
+.complete-task{
+	flex-direction: column;
+    display: flex;
+    @media (min-width: 1024px){
+    	flex-direction: row;
+    }
+	.task{
+		width: 100%;
+		padding-left: 5.4em;
+		position: relative;
+		max-width: calc( 600px + 5.4em );
 		@media (min-width: 1024px){
-			display: flex;
+		
 		}
+		&.open{
+			.task-content-wrap{
+				display: block;
+			}
+			.task-header{
+				border-radius: 1em 1em 0 0;
+				@media (min-width: 1024px){
+					min-width: 600px;
+				}
+			}
+		
+		}
+		&.success{
+			.task-header{
+				background: $successBg;
+				@media (min-width: 1024px){
+					min-width: 600px;
+				}
+			}
+		}
+		&.warning{
+			@media (min-width: 1024px){
+			
+			}
+			.task-header{
+				background: $warningBg;
+				@media (min-width: 1024px){
+					min-width: 600px;
+				}
+			}
+		}
+	
 		.task-header{
-			background: $warningBg;
-			@media (min-width: 1024px){
-				min-width: 600px;
+			padding: 1.5em;
+			background: $taskColor;
+			border-radius: 1em;
+			color: #fff;
+			font-family: 'sf_ui_textlight';
+			align-items: center;
+			justify-content: space-between;
+			.short-task-text{
+				width: 80%;
+				font-size: 1.4em;
+				white-space: nowrap;
+    			overflow: hidden;
+    			text-overflow: ellipsis;
+
 			}
-		}
-		.task-completion-row{
-			display: flex;
-    		justify-content: flex-start;
-    		align-items: center;
-			color: $warningBg;
-			margin-top: 2em;
-			@media (min-width: 1024px){
+			.icon-arrow{
+				font-size: .9em;
+				margin-right: 1.5em;
+			}
+			.icon-cancel{
+				font-size: 1.4em;
 				margin-top: 0;
-				margin-left: 7em;
-			}
-			.icon{
-				font-size: 2.5em;
-				margin-right: 0.8em;
-			}
-			.completion-text{
-				font-size: 1.6em;
 			}
 		}
+		.task-content-wrap{
+			display: none;
+			padding: 1.5em;
+			border-radius: 0 0 1em 1em;
+			background: #fff;
+			color: #404040;
+			font-family: 'sf_ui_textlight';
+			font-size: 1.4em;
+			line-height: 1.3;
+			box-shadow: 0px 5px 16px 5px rgba(0,2,3, .08);
+			& > *{
+				& + *{
+					margin-top: 1em;
+				}
+			}
+			.task-icon{
+				font-size: 1.43em;
+				width: 20px;
+			}
+			.time-row{
+				align-items: center;
+				.time{
+					width: 90%;
+					padding-left: 5px;
+				}
+			}
+			.task-text-row{
+				.text{
+					width: 90%;
+					padding-left: 5px;
+				}
+			}
+		}
+
 	}
-	& + .task{
+	& + .complete-task{
 		margin-top: 4em;
 	}
-	.task-header{
-		padding: 1.5em;
-		background: $taskColor;
-		border-radius: 1em;
-		color: #fff;
-		font-family: 'sf_ui_textlight';
-		align-items: center;
-		justify-content: space-between;
-		.short-task-text{
-			width: 80%;
-			font-size: 1.4em;
-			white-space: nowrap;
-    		overflow: hidden;
-    		text-overflow: ellipsis;
-
-		}
-		.icon-arrow{
-			font-size: .9em;
-			margin-right: 1.5em;
-		}
-		.icon-cancel{
-			font-size: 1.4em;
+	.task-completion-row{
+		width: 100%;
+		padding-left: 5.4em;
+		position: relative;
+		display: flex;
+    	justify-content: flex-start;
+    	align-items: center;
+    	margin-top: 2em;
+		@media (min-width: 1024px){
 			margin-top: 0;
+			margin-left: 4em;
 		}
-	}
-	.task-content-wrap{
-		display: none;
-		padding: 1.5em;
-		border-radius: 0 0 1em 1em;
-		background: #fff;
-		color: #404040;
-		font-family: 'sf_ui_textlight';
-		font-size: 1.4em;
-		line-height: 1.3;
-		box-shadow: 0px 5px 16px 5px rgba(0,2,3, .08);
-		& > *{
-			& + *{
-				margin-top: 1em;
-			}
+		.icon{
+			font-size: 2.5em;
+			margin-right: 0.8em;
 		}
-		.task-icon{
-			font-size: 1.43em;
-			width: 20px;
-		}
-		.time-row{
-			align-items: center;
-			.time{
-				width: 90%;
-				padding-left: 5px;
-			}
-		}
-		.task-text-row{
-			.text{
-				width: 90%;
-				padding-left: 5px;
-			}
-		}
-	}
 
-}
+		.completion-text{
+			font-size: 1.6em;
+		}
+		&.warning{
+				color: $warningBg;
+		}
+		&.success{
+			color: $successBg;
+		}
+	}
+}		
+
 .ti-do-time{
 	width: 3.3333em;
 	height: 3.3333em;
@@ -249,7 +249,7 @@ main{
 	align-items: center;
 }
 .task-check-row{
-		input[type="checkbox"]{
+	input[type="checkbox"]{
 		display: none;
 		& + label{
 			display: flex;
